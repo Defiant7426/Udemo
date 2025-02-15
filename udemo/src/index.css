@@ -1,43 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Monomakh&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --primary: #2B5F8D;
-    --primary-50: #EBF1F6;
-    --primary-100: #D7E3ED;
-    --primary-200: #AFC7DC;
-    --primary-300: #87ABCB;
-    --primary-400: #5F8FBA;
-    --primary-500: #2B5F8D;
-    --primary-600: #234C71;
-    --primary-700: #1B3954;
-    --primary-800: #122638;
-    --primary-900: #09131B;
-  }
+@theme {
+  --color-logo: #a435f0;
+  --color-morado-head: #5022c3;
+  --color-fondo: #ffffff;
+  --color-sombra: #ebecf5;
+  --color-registro: #6d28d2;
+
+  --font-roboto: "Roboto", sans-serif; 
+  --font-monomark: "Monomakh", serif;
+
+  --width-8xl: 84rem; 
 }
 
-@layer utilities {
-  .bg-primary { background-color: var(--primary); }
-  .bg-primary-50 { background-color: var(--primary-50); }
-  .bg-primary-100 { background-color: var(--primary-100); }
-  .bg-primary-200 { background-color: var(--primary-200); }
-  .bg-primary-300 { background-color: var(--primary-300); }
-  .bg-primary-400 { background-color: var(--primary-400); }
-  .bg-primary-500 { background-color: var(--primary-500); }
-  .bg-primary-600 { background-color: var(--primary-600); }
-  .bg-primary-700 { background-color: var(--primary-700); }
-  .bg-primary-800 { background-color: var(--primary-800); }
-  .bg-primary-900 { background-color: var(--primary-900); }
-
-  .text-primary { color: var(--primary); }
-  .text-primary-50 { color: var(--primary-50); }
-  .text-primary-100 { color: var(--primary-100); }
-  .text-primary-200 { color: var(--primary-200); }
-  .text-primary-300 { color: var(--primary-300); }
-  .text-primary-400 { color: var(--primary-400); }
-  .text-primary-500 { color: var(--primary-500); }
-  .text-primary-600 { color: var(--primary-600); }
-  .text-primary-700 { color: var(--primary-700); }
-  .text-primary-800 { color: var(--primary-800); }
-  .text-primary-900 { color: var(--primary-900); }
-}
+/* :root {
+  
+} */

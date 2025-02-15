@@ -1,14 +1,11 @@
 function App() {
   return (
     <>
-      <div className="bg-primary-500">
-        Gola
-      </div>
-      <button className="outline-cyan-500 transition hover:outline-2">dfsd</button>
-      <div className="text-primary-300">
-        haa
-      </div>
-
+      <p className="font-sans text-6xl font-semibold">Un aprendizaje interesante</p>
+      <p className="font-serif text-6xl font-semibold">Un aprendizaje interesante</p>
+      <p className="font-mono text-6xl font-semibold">Un aprendizaje interesante</p>
+      <p className="font-roboto text-6xl ">Un aprendizaje interesante</p>
+      <p className="font-monomark text-6xl ">Un aprendizaje interesante</p>
     </>
   )
 }
