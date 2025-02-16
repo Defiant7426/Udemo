@@ -16,7 +16,7 @@ export default function BandaPromocional() {
         <span className="font-black">¿Quieres ponerte al día? </span>
         <span className="mx-1">|</span>
         <span className="font-semibold">
-          Adquiere las habilidades con Udemy Business.
+          Adquiere las habilidades con Udemo Business.
         </span>
       </div>
 
