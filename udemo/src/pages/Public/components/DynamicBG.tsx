@@ -1,10 +1,11 @@
-
-
 import { useState, useEffect, useRef } from 'react';
+import ChevronLeft from '../../../icons/ChevronLeft';
 
 export default function DynamicBG() {
   const [activeSlide, setActiveSlide] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const startX = useRef(0);
+  const endX = useRef(0);
 
   const slides = [
     {
@@ -45,8 +46,29 @@ export default function DynamicBG() {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    startX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    endX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (startX.current - endX.current > 50) {
+      handleNext();
+    } else if (endX.current - startX.current > 50) {
+      handlePrev();
+    }
+  };
+
   return (
-    <div className="relative lg:w-[90%] max-w-8xl mx-auto overflow-hidden">
+    <div
+      className="relative lg:w-[90%] max-w-8xl mx-auto overflow-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div
         className="flex transition-transform duration-500 h-full"
         style={{ transform: `translateX(-${activeSlide * 100}%)` }}
@@ -90,16 +112,16 @@ export default function DynamicBG() {
             </div>
 
             {/* Tarjeta para mobile */}
-            <div className="lg:hidden p-6 bg-white">
-              <div className="bg-white rounded-lg shadow-lg p-6">
-                <h2 className="text-xl font-bold mb-3">{slide.title}</h2>
-                <p className="text-gray-600 mb-4">{slide.content}</p>
+            <div className="lg:hidden p-1 bg-white">
+              <div className="bg-white rounded-lg px-6 py-3">
+                <h2 className="text-xl font-bold mb-2">{slide.title}</h2>
+                <p className="text-gray-600 mb-2 text-sm">{slide.content}</p>
                 {slide.buttons && (
                   <div className="flex flex-col gap-3">
-                    <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                    <button className="font-bold lg:inline-flex items-center justify-center px-4 py-2.5 rounded-md bg-registro text-white hover:bg-purple-700">
                       Plan individual
                     </button>
-                    <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">
+                    <button className="font-bold lg:inline-flex items-center justify-center px-3 py-2.5 rounded-md border border-registro text-registro bg-white hover:bg-purple-50">
                       Plan para empresas
                     </button>
                   </div>
@@ -117,14 +139,14 @@ export default function DynamicBG() {
           className="absolute left-4 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors"
           aria-label="Slide anterior"
         >
-          ←
+          <ChevronLeft className='w-5 text-iconos' stroke='3'/>
         </button>
         <button
           onClick={handleNext}
           className="absolute right-4 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors"
           aria-label="Siguiente slide"
         >
-          →
+          <ChevronLeft className='w-5 text-iconos rotate-180' stroke='3'/>
         </button>
       </div>
     </div>

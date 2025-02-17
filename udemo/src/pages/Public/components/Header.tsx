@@ -6,7 +6,7 @@ import ThreeBarsIcon from "../../../icons/ThreeBarsIcon";
 
 export default function Header() {
   return (
-    <header className="relative flex text-sm items-center shadow-lg shadow-sombra py-4 lg:py-9 justify-between">
+    <header className="relative flex text-sm items-center shadow-md shadow-gray-300 z-10 py-1.5 lg:py-9 justify-between ">
       {/* Menú móvil */}
       <ThreeBarsIcon
         className="w-6 mx-3 text-iconos lg:hidden cursor-pointer"
@@ -56,7 +56,7 @@ export default function Header() {
       </div>
 
       {/* Sección derecha */}
-      <div className="mx-3 flex items-center space-x-3 lg:absolute lg:right-1">
+      <div className=" flex items-center space-x-3 lg:absolute lg:right-1">
         <LupaIcon
           className="w-5 h-5 text-iconos lg:hidden cursor-pointer"
           stroke="2"
