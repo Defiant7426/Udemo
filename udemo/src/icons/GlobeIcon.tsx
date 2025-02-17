@@ -8,7 +8,7 @@ export default function GlobeIcon({ className, stroke }: IconProps) {
       viewBox="0 0 24 24"
       stroke-width= {stroke}
       stroke="currentColor"
-      class={ className}
+      className={ className}
     >
       <path
         stroke-linecap="round"
