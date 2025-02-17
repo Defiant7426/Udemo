@@ -11,7 +11,7 @@ export default function BandaPromocional() {
   if (!visible) return null
 
   return (
-    <div className="relative w-full bg-morado-banda h-auto text-white font-nurito flex items-center justify-center text-sm sm:text-base">
+    <div className="relative w-full bg-morado-banda h-auto text-white font-nurito flex items-center justify-center text-sm lg:text-base">
       <div className="px-8 py-4">
         <span className="font-black">¿Quieres ponerte al día? </span>
         <span className="mx-1">|</span>
